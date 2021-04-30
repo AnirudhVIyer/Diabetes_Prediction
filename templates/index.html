@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Diabetes Predictor</title>
+        <link rel="shortcut icon" type="image/jpg" href="favicon.jpeg" size='16x16'/>
+       
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Diabetes Predictor</span></h2>
+            <div class='description'>
+              <p>A Machine Learning App to predict Diabetes</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    		<div class='container'>
+                <form action="{{ url_for('predict') }}" method="POST">
+                    <label for="age">What's your Age</label>
+                    <select id="age" name="age">
+                      <option value="00">Greater than 15</option>
+                      <option value="01">Less than 15</option>
+                      <option value="10">Less than 11</option>
+                      <option value="11">Less than 5</option>
+                    </select>
+
+                    &emsp;  
+
+
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                      <option value="0">Female</option>
+                      <option value="1">Male</option>
+                     </select>
+
+                    </div>
+
+                    <div class='container'>
+                     <label for="h1b">HBA1C</label>
+                     <select id="h1b" name="h1b">
+                       <option value="0">Under 7.5%</option>
+                       <option value="1">Over 7.5%</option>
+                      </select>     
+
+
+                     
+                     <label for="nutrition">Aceess to Nutrition?</label>
+                     <select id="nutrition" name="nutrition">
+                       <option value="0">No</option>
+                       <option value="1">Yes</option>
+                      </select>  
+                      
+                      
+                      <label for="mom">Parent's Education Completed</label>
+                      <select id="mom" name="mom">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                       </select> 
+                       
+                      </div>
+                      <div class='container'>
+                       <label for="auto">Autoantibodies Present</label>
+                       <select id="auto" name="auto">
+                         <option value="0">No</option>
+                         <option value="1">Yes</option>
+                        </select> 
+                        
+                        &emsp;
+                        <label for="glu_met">Impaired glucose metabolism </label>
+                        <select id="glu_met" name="glu_met">
+                          <option value="0">No</option>
+                          <option value="1">Yes</option>
+                         </select> 
+                         
+                         &emsp;
+                         <label for="insulin">Insulin taken</label>
+                         <select id="insulin" name="insulin">
+                           <option value="0">No</option>
+                           <option value="1">Yes</option>
+                          </select>
+                          
+                      </div>
+
+                      <div class='container'>
+                          <label for="T1">Type 1 Diabetes in Family</label>                         
+                          <select id="T1" name="T1">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                           </select>  
+                           &emsp;
+                           
+                           <label for="T2">Type 2 Diabetes in Family</label>                         
+                          <select id="T2" name="T2">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                           </select>  
+                           
+                           &emsp;
+                           <label for="Hypo">Hypoglycemis </label>                         
+                          <select id="Hypo" name="Hypo">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                           </select>    
+                           
+                           &emsp;
+
+                           <br>
+                           <br>
+                           <br>
+                           <label for="pan">Pancreatic Cancer Detected</label>                              
+                           <select id="pan" name="pan">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                           </select>  
+                           
+                           &emsp;
+                           <label for="res">Residence Type</label>                              
+                           <select id="res" name="res">
+                            <option value="00">Suburbn</option>
+                            <option value="01">Urban</option>
+                            <option value="11">Rural</option>
+                           </select>  
+
+                          </div>
+
+                          <div class='container'>
+
+                          
+
+                           <label for="height">Height:(in metres)</label>
+                           <input type="text" id="height" name="height">
+
+                           <br>
+                           <br>
+                           <label for="weight">Weight:(in Kg)</label>
+                           <input type="text" id="weight" name="weight">
+                           <br>
+                           <br>
+
+
+                           &emsp;<label for="bmi">BMI</label>
+                           &emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" id="bmi" name="bmi"> 
+                           
+                           
+                          </div>
+                                                                                                 
+                  
+
+
+        		<input type="submit" class="mybutton" value="Check Prediction">
+        	</form>
+    	</div>
+
+
+    </body>
+</html>
